@@ -1,0 +1,113 @@
+﻿{
+  "TrainingTime": 10,
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "TabularFile",
+    "Version": 1,
+    "FilePath": "C:\\work\\machine-learning-for-auditors\\3 Project Portfolio Analysis\\Project_Portfolio.csv",
+    "Delimiter": ",",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Project",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Business Unit",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Expected Duration (years)",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Actual Duration (years)",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Budget Amount",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Actual Amount",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Team Size",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "Result",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "String",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 1
+      }
+    ]
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 0,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.36833333333333329,
+        "RuntimeInSeconds": 3.6909999847412109
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.485,
+        "RuntimeInSeconds": 3.3989999294281006
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "LbfgsMaximumEntropyMulti",
+        "Score": 0.485,
+        "RuntimeInSeconds": 2.2539999485015869
+      }
+    ],
+    "Pipeline": "{\"parameter\":{\r\n  \"0\": {\r\n    \"OutputColumnNames\": [\r\n      \"Expected Duration (years)\",\r\n      \"Actual Duration (years)\",\r\n      \"Budget Amount\",\r\n      \"Actual Amount\",\r\n      \"Team Size\"\r\n    ],\r\n    \"InputColumnNames\": [\r\n      \"Expected Duration (years)\",\r\n      \"Actual Duration (years)\",\r\n      \"Budget Amount\",\r\n      \"Actual Amount\",\r\n      \"Team Size\"\r\n    ]\r\n  },\r\n  \"1\": {\r\n    \"InputColumnName\": \"Project\",\r\n    \"OutputColumnName\": \"Project\"\r\n  },\r\n  \"2\": {\r\n    \"InputColumnName\": \"Business Unit\",\r\n    \"OutputColumnName\": \"Business Unit\"\r\n  },\r\n  \"3\": {\r\n    \"InputColumnNames\": [\r\n      \"Expected Duration (years)\",\r\n      \"Actual Duration (years)\",\r\n      \"Budget Amount\",\r\n      \"Actual Amount\",\r\n      \"Team Size\",\r\n      \"Project\",\r\n      \"Business Unit\"\r\n    ],\r\n    \"OutputColumnName\": \"Features\"\r\n  },\r\n  \"4\": {\r\n    \"OutputColumnName\": \"Result\",\r\n    \"InputColumnName\": \"Result\"\r\n  },\r\n  \"5\": {\r\n    \"NumberOfTrees\": 4,\r\n    \"NumberOfLeaves\": 4,\r\n    \"FeatureFraction\": 1.0,\r\n    \"LabelColumnName\": \"Result\",\r\n    \"FeatureColumnName\": \"Features\"\r\n  },\r\n  \"6\": {\r\n    \"OutputColumnName\": \"PredictedLabel\",\r\n    \"InputColumnName\": \"PredictedLabel\"\r\n  }\r\n},\"estimators\":[\"ReplaceMissingValues\",\"FeaturizeText\",\"FeaturizeText\",\"Concatenate\",\"MapValueToKey\",\"FastForestOva\",\"MapKeyToValue\"]}",
+    "MetricName": "MicroAccuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 1
+}
