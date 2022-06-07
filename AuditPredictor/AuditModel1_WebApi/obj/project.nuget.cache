@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "bAwB7zivDS6TZ2rM2V2JgYxiF4DAXezHn8qQbvpFbzQsqifNYH8GHK2D/kuTAL0Fs6dZRcNWO8fe0+lJ/5+Avg==",
+  "dgSpecHash": "isISurA7ffmIxEvAEmIK/E4/eWh53WWYUfyyn0Hrj/nXIV33tr8tErMVV4zgnysRKT63ZDiNRL6MYKBHSMj7Rg==",
   "success": true,
-  "projectFilePath": "c:\\work\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
+  "projectFilePath": "C:\\work\\d3demo\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ruslan.Petrukhin\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
     "C:\\Users\\Ruslan.Petrukhin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

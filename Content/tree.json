@@ -1,0 +1,35 @@
+{
+  "name": "Budget Amount <= 40000.0",
+  "children": [
+    {
+      "name": "Expected Duration (years) <= 1.2",
+      "children": [
+        {
+          "name": "FAIL"
+        },
+        {
+          "name": "Actual Amount <= 80000.0",
+          "children": [
+            {
+              "name": "FAIL"
+            },
+            {
+              "name": "Is Business Unit name SCM",
+              "children": [
+                {
+                  "name": "FAIL"
+                },
+                {
+                  "name": "SUCCESS"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FAIL"
+    }
+  ]
+}
