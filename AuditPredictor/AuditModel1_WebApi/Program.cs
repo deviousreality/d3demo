@@ -7,8 +7,25 @@ using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 
+//var policyName = "_policy1";
+
 // Configure app
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy(name: policyName,
+//                      builder =>
+//                      {
+//                          builder
+//                            //.WithOrigins("http://localhost:8196")
+//                            .AllowAnyOrigin()
+//                            .AllowAnyMethod()
+//                            .AllowAnyHeader();
+//                      });
+//});
+
+builder.Services.AddCors();
 
 builder.Services.AddPredictionEnginePool<AuditModel1.ModelInput, AuditModel1.ModelOutput>()
     .FromFile("AuditModel1.zip");
@@ -25,6 +42,18 @@ app.UseSwagger();
 app.UseSwaggerUI(c =>
 {
     c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+});
+
+//app.UseCors(policyName);
+
+app.UseCors((context) =>
+{
+    context
+    .WithOrigins("null")
+    //.WithOrigins("http://localhost:8196")
+    //.AllowAnyOrigin()
+    .AllowAnyMethod()
+    .AllowAnyHeader();
 });
 
 // Define prediction route & handler
