@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3T8E7BGhVuFIxKvWYrdqw9ziVevLipZf2DUp81fw0eY=",
+  "Source": "AuditModel1_WebApi",
+  "BasePath": "_content/AuditModel1_WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
