@@ -6074,11 +6074,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\work\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
+      "projectUniqueName": "C:\\work\\d3demo\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
       "projectName": "AuditModel1_WebApi",
-      "projectPath": "c:\\work\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
+      "projectPath": "C:\\work\\d3demo\\AuditPredictor\\AuditModel1_WebApi\\AuditModel1_WebApi.csproj",
       "packagesPath": "C:\\Users\\Ruslan.Petrukhin\\.nuget\\packages\\",
-      "outputPath": "c:\\work\\AuditPredictor\\AuditModel1_WebApi\\obj\\",
+      "outputPath": "C:\\work\\d3demo\\AuditPredictor\\AuditModel1_WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
