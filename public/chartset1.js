@@ -110,7 +110,7 @@
       .attr('x', function(d) { return d.position; })
       .attr('y', '-1.8em')
       .style('text-anchor', function(d) { return d.align; })
-      .text(function(d) { return d.party === 'tie' ? '' : formatCandidate[d.party] + ' has '; });
+      // .text(function(d) { return d.party === 'tie' ? '' : formatCandidate[d.party] + ' has '; });
   
   scoreboard.selectAll('.g-prefix').append('tspan')
       .attr('class', 'g-score');
@@ -186,7 +186,19 @@
         .attr('class', function(d) { return 'g-button g-' + d.outcome; })
         .text(function(d) { return d.outcome; })
         .on('click', function(view) { change(view); transition(); });
-  
+
+    // controlButton = control.append('div')
+    //     .attr('class', 'g-buttons')
+    //     .selectAll('input')
+    //     .data(function(d) {
+    //       return ['dem', 'rep'].map(function(o) {
+    //         return {state: d, outcome: o};
+    //       });
+    //     })
+    //   .enter().append('input')
+    //     .attr('type', 'input')
+    //     .on('input', function(view) { change(view); transition(); });
+    
     var controlResult = control.append('div')
         .attr('class', 'g-results');
   
@@ -408,18 +420,20 @@
   
     //
     kicker.text('With ' + formatNumber(states.length) + ' state' + (states.length > 1 ? 's' : '') + ' undecided:');
-    scoreboard.select('.g-prefix.g-dem .g-score').text(demPaths);
-    scoreboard.select('.g-prefix.g-dem .g-suffix').text(' way' + ((demPaths === 1) ? '' : 's') + ' to win');
-    scoreboard.select('.g-prefix.g-rep .g-score').text(repPaths);
-    scoreboard.select('.g-prefix.g-rep .g-suffix').text(' way' + ((repPaths === 1) ? '' : 's') + ' to win');
-    scoreboard.select('.g-prefix.g-tie .g-score').text(tiePaths);
-    scoreboard.select('.g-prefix.g-tie .g-suffix').text(' tie' + ((tiePaths === 1) ? '' : 's'));
+    
+    // DISPLAYS SCORES LIKE "Candidate" HAS ##
+    // scoreboard.select('.g-prefix.g-dem .g-score').text(demPaths);
+    // scoreboard.select('.g-prefix.g-dem .g-suffix').text(' way' + ((demPaths === 1) ? '' : 's') + ' to win');
+    // scoreboard.select('.g-prefix.g-rep .g-score').text(repPaths);
+    // scoreboard.select('.g-prefix.g-rep .g-suffix').text(' way' + ((repPaths === 1) ? '' : 's') + ' to win');
+    scoreboard.select('.g-prefix.g-tie .g-score').text('Budget Amount <= 40,000');
+    //scoreboard.select('.g-prefix.g-tie .g-suffix').text(' tie' + ((tiePaths === 1) ? '' : 's'));
   
     //
     var totalPaths = 1 << states.length;
-    scoreboard.select('.g-dem.g-ratio').text(formatPercent(demPaths / totalPaths) + ' of paths');
-    scoreboard.select('.g-rep.g-ratio').text(formatPercent(repPaths / totalPaths) + ' of paths');
-    scoreboard.select('.g-tie.g-ratio').text(formatPercent(tiePaths / totalPaths) + ' of paths');
+    // scoreboard.select('.g-dem.g-ratio').text(formatPercent(demPaths / totalPaths) + ' of paths');
+    // scoreboard.select('.g-rep.g-ratio').text(formatPercent(repPaths / totalPaths) + ' of paths');
+    // scoreboard.select('.g-tie.g-ratio').text(formatPercent(tiePaths / totalPaths) + ' of paths');
   
     if (nodes.length === 1) {
       endAlert.select('.g-output').text(root.demvotes > root.repvotes ? 'Obama would capture the White House.'
